@@ -12,7 +12,6 @@ const Login = () => {
               imageUrl="/login-illustration.svg"
               className="image-illustration"
             />
-            {/* <img src="/login-illustration.svg" alt="login-illustration" /> */}
           </div>
         </section>
         <section className="form">

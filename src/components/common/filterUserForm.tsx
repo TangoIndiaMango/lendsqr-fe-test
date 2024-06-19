@@ -1,15 +1,8 @@
 import { useForm } from "react-hook-form";
 import { getItem } from "../../utils/helpers";
 import { useEffect, useState } from "react";
+import { FilterFormData } from "../../utils/types";
 
-interface FilterFormData {
-  organization: string;
-  username: string;
-  email: string;
-  date: string;
-  phone: string;
-  status: string;
-}
 
 const FilterForm = () => {
   const [orgData, setOrgData] = useState([]);

@@ -1,9 +1,7 @@
 import ReactPaginate from "react-paginate";
+import { PaginationProps } from "../../utils/types";
 
-export type PaginationProps = {
-  pageCount: number;
-  handlePageClick: (event: { selected: number }) => void;
-};
+
 
 const Pagination = ({ pageCount, handlePageClick }: PaginationProps) => {
   return (

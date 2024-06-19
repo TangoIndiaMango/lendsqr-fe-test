@@ -10,10 +10,14 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route element={<ProtectedRoute />}>
-          <Route index  Component={withMainLayout(Users)} />
-          <Route path="user-details/:userId" Component={withMainLayout(UserDetails)} />
+          <Route index path="/users" Component={withMainLayout(Users)} />
+          <Route
+            path="user-details/:userId"
+            Component={withMainLayout(UserDetails)}
+          />
         </Route>
       </Routes>
     </Router>

@@ -1,41 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { FC, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { dropdownItems } from "../../utils/constants";
 import InfoDropDown from "../users/dropDown";
 import FilterForm from "./filterUserForm";
+import { TableProps } from "../../utils/types";
+import { formatDate } from "../../utils/helpers";
 
-interface Column {
-  key: string;
-  header: string;
-  isSortable?: boolean;
-}
 
-interface Row {
-  id: number;
-  [key: string]: string | number | boolean | Date;
-}
-
-interface Props {
-  columns: Column[];
-  rows: Row[] | any;
-}
-
-const formatDate = (dateString: Date): string => {
-  const date = new Date(dateString);
-  const formatter = new Intl.DateTimeFormat("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-    hour: "numeric",
-    minute: "numeric",
-    hour12: true
-  });
-
-  return formatter.format(date);
-};
-
-const DataTable: FC<Props> = ({ columns, rows }) => {
+const DataTable = ({ columns, rows }: TableProps) => {
   const [isFilterOpen, setIsFilterOpen] = useState<number | null>(null);
   const [isOptionsOpen, setIsOptionsOpen] = useState<number | null>(null);
   const [userStatus, setUserStatus] = useState<{ [key: string]: string }>({});
@@ -80,11 +53,11 @@ const DataTable: FC<Props> = ({ columns, rows }) => {
             <tr key={row.id}>
               {columns.map((column) => (
                 <td key={column.key}>
-                  {column.key === 'orgName' ? (
+                  {column.key === "orgName" ? (
                     <Link to={`/user-details/${row.id}`}>
                       {row[column.key]}
                     </Link>
-                  ) : column.key === 'createdAt' ? (
+                  ) : column.key === "createdAt" ? (
                     <span>{formatDate(row[column.key])}</span>
                   ) : (
                     <span>{row[column.key]}</span>
@@ -92,8 +65,8 @@ const DataTable: FC<Props> = ({ columns, rows }) => {
                 </td>
               ))}
               <td key={`status-${row.id}`}>
-                <span className={`status ${userStatus[row.id] || 'active'}`}>
-                  {userStatus[row.id] === 'inactive' ? 'Blacklisted' : 'Active'}
+                <span className={`status ${userStatus[row.id] || "active"}`}>
+                  {userStatus[row.id] === "inactive" ? "Blacklisted" : "Active"}
                 </span>
               </td>
               <td key={`more-${row.id}`}>

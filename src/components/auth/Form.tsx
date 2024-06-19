@@ -39,7 +39,7 @@ const AuthForm = () => {
 
     if (data.email && data.password) {
       setLoading(false);
-      navigate('/dashboard');
+      navigate('/users');
     } else {
       setLoading(false);
     }
