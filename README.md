@@ -50,3 +50,5 @@ npm start
 ```
 
 - The application will be running at http://localhost:5173/
+
+- [Approach thoughts and Docs for test components](https://docs.google.com/document/d/1sa0uXWzP8W_8Y5onSsXj4K-XD6fkfm8L8SXVA9xKFsw/edit?usp=sharing)
