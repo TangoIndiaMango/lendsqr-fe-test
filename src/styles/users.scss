@@ -1,0 +1,55 @@
+.user-content {
+	font-family: $workSans;
+
+	h1 {
+		color: $bluePrimary;
+		font-size: 24px;
+		font-weight: 500;
+		margin-bottom: 30px;
+	}
+
+	.user-summary {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		gap: 30px;
+		justify-content: space-between;
+		width: 100%;
+		gap: 30px;
+		margin-bottom: 30px;
+
+		@include breakpointMobile {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 20px;
+		}
+	}
+}
+
+.users-table{
+	width: 100%;
+}
+
+.paginate {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 23px;
+	color: $textPrimary;
+	font-size: 14px;
+	@include breakpointMobile {
+		flex-direction: column;
+		gap: 20px;
+		align-items: center;
+	}
+	.page-vals {
+		span {
+			padding: 7px 10px;
+			color: $bluePrimary;
+			font-weight: 500;
+			background-color: rgba(33, 63, 125, 0.1);
+			border-radius: 4px;
+			img {
+				margin-left: 10px;
+			}
+		}
+	}
+}

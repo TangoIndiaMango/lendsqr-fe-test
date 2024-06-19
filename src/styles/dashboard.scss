@@ -1,0 +1,40 @@
+@import './variables.scss';
+
+.dashboard-container {
+    background-color: #fbfbfb;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    font-family: $workSans;
+
+    .side-content {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+
+        @include breakpointDesktop {
+            // justify-content: flex-start;
+        }
+
+        .dashboard {
+            width: 80vw;
+            max-width: 1200px;
+            margin: 0px auto;
+
+            .content {
+                padding: 140px 40px 40px 40px;
+                width: 100%;
+                height: 100vh;
+                overflow-y: scroll;
+                @include hideScrollbar;
+
+                @include breakpointDesktop {
+                    padding: 100px 20px 40px 20px;
+                }
+            }
+        }
+    }
+
+}
